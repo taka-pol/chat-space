@@ -12,7 +12,7 @@
 - has_many :groups, through: :groups_users
 - has_many :messages
 
-## groups_usersテーブル <!-- 中間テーブル -->
+## groups_usersテーブル
 | Column | Type | Options |
 |--------|------|-------- |
 | user_id | references | null: false, foreign_key: true |
