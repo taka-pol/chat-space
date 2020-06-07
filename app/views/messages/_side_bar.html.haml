@@ -1,0 +1,29 @@
+.SideBar
+  .SideHeader
+    .SideHeader__box
+      .UserName
+        TestUser
+      .Icons
+        = link_to "#", class:"Icons__link Icons__link--left" do
+          =icon('far','edit', class: "left-btn")
+        = link_to "#", class:"Icons__link Icons__link--right" do
+          =icon('fas','cog', class: "right-btn")
+  .GroupsList
+    .Group
+      %a.Group__link
+        %p.GroupName
+          グループA
+        %p.GroupMessage
+          コメントa
+    .Group
+      %a.Group__link
+        %p.GroupName
+          グループB
+        %p.GroupMessage
+          コメントb
+    .Group
+      %a.Group__link
+        %p.GroupName
+          グループC
+        %p.GroupMessage
+          コメントc
