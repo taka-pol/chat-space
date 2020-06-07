@@ -22,7 +22,7 @@
       %from.NewMessage
         .InputBox
           %input.InputBox__text{ type:"text", placeholder: "type a message"}
-          %label.InputImage{for:"img-file"}
-            = icon('far','image',class:"InputImage__icon")
-            %input.InputImage__file{type:"file",id:"img-file"}
+          %label.InputBox__image{for:"img-file"}
+            = icon('far','image',class:"InputBox__image--icon")
+            %input.InputBox__image--file{type:"file",id:"img-file"}
         %input.SendButton{ type:"submit",value:"Send"}
