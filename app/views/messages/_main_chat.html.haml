@@ -1,0 +1,28 @@
+.Main
+  .MainHeader
+    .Group
+      .GroupName
+        TestGroup
+        %ul.Member
+          Member : test
+    = link_to "#", class:"Edit-link" do
+      .Edit-link__btn
+        Edit
+  .MessageField
+    #id1.MessageBox
+      .MessageInfo
+        %p.talk-user
+          user01
+        %p.date
+          2020/5/28(Tue) 00:00:00
+      %p.content
+        HELLO!
+  .Footer
+    .InputForm
+      %from.NewMessage
+        .InputBox
+          %input.InputBox__text{ type:"text", placeholder: "type a message"}
+          %label.InputBox__image{for:"img-file"}
+            = icon('far','image',class:"InputBox__image--icon")
+            %input.InputBox__image--file{type:"file",id:"img-file"}
+        %input.SendButton{ type:"submit",value:"Send"}
