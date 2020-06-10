@@ -2,11 +2,11 @@
   .SideHeader
     .SideHeader__box
       .UserName
-        TestUser
+        = current_user.name
       .Icons
         = link_to "#", class:"Icons__link Icons__link--left" do
           =icon('far','edit', class: "left-btn")
-        = link_to "#", class:"Icons__link Icons__link--right" do
+        = link_to  edit_user_path(current_user), class:"Icons__link Icons__link--right" do
           =icon('fas','cog', class: "right-btn")
   .GroupsList
     .Group
