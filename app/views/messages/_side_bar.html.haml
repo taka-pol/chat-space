@@ -9,21 +9,10 @@
         = link_to  edit_user_path(current_user), class:"Icons__link Icons__link--right" do
           =icon('fas','cog', class: "right-btn")
   .GroupsList
-    .Group
-      %a.Group__link
-        %p.GroupName
-          グループA
-        %p.GroupMessage
-          コメントa
-    .Group
-      %a.Group__link
-        %p.GroupName
-          グループB
-        %p.GroupMessage
-          コメントb
-    .Group
-      %a.Group__link
-        %p.GroupName
-          グループC
-        %p.GroupMessage
-          コメントc
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .GroupName
+            = group.name
+          .GroupMessage
+            メッセージはまだありません
