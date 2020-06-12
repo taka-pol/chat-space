@@ -1,18 +1,20 @@
 .SideBar
-  .SideHeader
-    .SideHeader__box
-      .UserName
+  .LeftHeader
+    .LeftHeader__list
+      %h3.LeftHeader__userName
         = current_user.name
-      .Icons
-        = link_to "#", class:"Icons__link Icons__link--left" do
-          =icon('far','edit', class: "left-btn")
-        = link_to  edit_user_path(current_user), class:"Icons__link Icons__link--right" do
-          =icon('fas','cog', class: "right-btn")
-  .GroupsList
+      %ul.LeftHeader__iconList
+        %li.LeftHeader__Icon
+          = link_to new_group_path do
+            = icon('fas', 'edit')
+        %li.LeftHeader__Icon
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog')
+  .GroupList
     - current_user.groups.each do |group|
       .Group
-        = link_to '#' do
-          .GroupName
+        = link_to group_messages_path(group) do
+          .Group__name
             = group.name
-          .GroupMessage
-            メッセージはまだありません
+          .Group__message
+            = group.show_last_message
